@@ -22,6 +22,8 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
             * если в прямоугольнике нельзя разместить ни одного квадрата
             * со стороной С (например, если зна чение С превышает размер сторон прямоугольника).
             */
+            Console.WriteLine("TASK 1");
+
             double a = 0;
             double b = 0;
             double c = 0;
@@ -88,6 +90,8 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
             * (целое число) и итоговый размер вклада S (вещественное число).
             */
 
+            Console.WriteLine("TASK 2");
+
             Console.WriteLine("Enter the annual interest rate on the deposit");
             Console.WriteLine("Deposit rate must be greater than 0 and equal to or less than 25");
 
@@ -113,6 +117,8 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
             * равное его значению (например, число 3 выводится 3 раза).
             */
 
+            Console.WriteLine("TASK 3");
+
             int A = 3;
             int B = 7;
 
@@ -132,6 +138,13 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
              * Например, если было введено число 345,
              * то программа должна вывести число 543.
             */
+
+            Console.WriteLine("TASK 4");
+            string s = "123456789";
+            Console.WriteLine(s);
+            char[] arr = s.ToCharArray();
+            Array.Reverse(arr);
+            Console.WriteLine(arr);
 
             Console.ReadLine();
 
