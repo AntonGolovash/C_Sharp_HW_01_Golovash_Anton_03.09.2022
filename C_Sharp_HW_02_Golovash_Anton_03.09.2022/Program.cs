@@ -22,21 +22,26 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
             * если в прямоугольнике нельзя разместить ни одного квадрата
             * со стороной С (например, если зна чение С превышает размер сторон прямоугольника).
             */
-            int a = 0;
-            int b = 0;
-            int c = 0;
+            double a = 0;
+            double b = 0;
+            double c = 0;
 
         Start_of_the_program:
 
             Console.WriteLine("Enter the short side of the rectangle");
+            
             a = Convert.ToInt32(Console.ReadLine());
+            
             Console.WriteLine("Enter the long side of the rectangle");
             Console.WriteLine("The value must be less than the short side of the rectangle");
-            b = Convert.ToInt32(Console.ReadLine());
+            
+            b = Convert.ToDouble(Console.ReadLine());
+            
             if (a > 0 && b > 0 && a < b)
             {
                 goto Continuation;
             }
+            
             else
             {
                 Console.WriteLine("Please, enter correct data");
@@ -47,11 +52,14 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
 
             Console.WriteLine("Enter the side of a square inscribed in a rectangle");
             Console.WriteLine("The value must be less than the long side of the first rectangle");
-            c = Convert.ToInt32(Console.ReadLine());
+           
+            c = Convert.ToDouble(Console.ReadLine());
+            
             if (c < b)
             {
                 goto Continuation1;
             }
+            
             else
             {
                 Console.WriteLine("Please, enter correct data");
@@ -60,12 +68,13 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
 
         Continuation1:
 
-            double vertical_division_result = (double)(a / c);
-            double horizontal_division_result = (double)(b / c);
-            double vertical_remainder_of_division = (double)(a % c);
-            double horizontal_remainder_of_division = (double)(b % c);
+            double vertical_division_result = (a / c);
+            double horizontal_division_result = (b / c);
+            double vertical_remainder_of_division = (a % c);
+            double horizontal_remainder_of_division = (b % c);
             double number_of_inscribed_squares = vertical_division_result * horizontal_division_result;
             double area_of_unoccupied_part_of_rectangle = vertical_remainder_of_division * horizontal_remainder_of_division;
+            
             Console.WriteLine($"On a rectangle, you can place {number_of_inscribed_squares} squares");
             Console.WriteLine($"Area of unoccupied part of the rectangle {area_of_unoccupied_part_of_rectangle} ");
 
@@ -79,16 +88,43 @@ namespace C_Sharp_HW_02_Golovash_Anton_03._09._2022
             * (целое число) и итоговый размер вклада S (вещественное число).
             */
 
-            double deposit_amount = 10000;
+            Console.WriteLine("Enter the annual interest rate on the deposit");
+            Console.WriteLine("Deposit rate must be greater than 0 and equal to or less than 25");
 
+            double annual_interest_rate = Convert.ToDouble(Console.ReadLine());
+            double monthly_interest_rate = annual_interest_rate / 12;
+            double deposit_amount = 10000;
+            int months = 0;
+            
+            while (deposit_amount <= 11000)
+            {
+                deposit_amount += (deposit_amount * (monthly_interest_rate / 100));
+                ++months;
+            }
+
+            Console.WriteLine($"After {months} months will the deposit exceed 11000");
+            Console.WriteLine($"The total amount of the contribution will be {deposit_amount}");
 
             /*
             * 3. Даны целые положительные числа А и В (А < В).
-            * Вы вести все целые числа от А до В включительно;
+            * Вывести все целые числа от А до В включительно;
             * каждое число должно выводиться на новой строке;
             * при этом каждое число должно выводиться количество раз,
             * равное его значению (например, число 3 выводится 3 раза).
             */
+
+            int A = 3;
+            int B = 7;
+
+            while (A <= B)
+            {
+                for (int i = A; i > 0; --i)
+                {
+                    Console.Write(A);
+                }
+                ++A;
+                Console.WriteLine();
+            }
 
             /*
              * 4. Дано целое число N большее 0, найти число,
