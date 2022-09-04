@@ -10,6 +10,8 @@ namespace C_Sharp_HW_01_03_Golovash_Anton_03._09._2022
     {
         static void Main(string[] args)
         {
+
+
         }
     }
 }
